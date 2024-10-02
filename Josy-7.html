@@ -19,7 +19,7 @@ body {
             margin: 0;
             height: 10000px; /* Hauteur fixe de la page */
             overflow-y: auto; /* Activer la barre de défilement si le contenu dépasse */
-            background: #000000;
+            background: #121212;
             overflow-x: hidden;
             /*display: flex;
             flex-wrap: wrap;*/
@@ -31,17 +31,18 @@ body {
         /*histoire josy */
         .box_histoire_1 {
             position: absolute;
-            width: 240px;
-            height: 295px;
-            top: 70vh;
+            width: 450px;
+            height: 125px;
+            top: 100vh;
             left: 15vw;
-            background-color: white;
-            padding: 20px; /* Ajoute une marge intérieure */
-            color: black;
-            border: 4px solid violet;
+            background-color: transparent; 
+            padding: 5px; /* Ajoute une marge intérieure */
+            color: white;
+           /* border: 4px solid violet;*/
+            overflow-x: hidden;
            /* transform: translate(-50%, -50%);*/
             text-align: justify; /* Justifie le texte */
-            font-size: 19px;
+            font-size: 20px;
             border-radius: 20px;
             transform-origin: bottom left; /* Origine de transformation en bas à gauche */
             transform: scale(0); /* Réduit la taille à zéro au début */
@@ -149,8 +150,9 @@ body {
 
 /* Premier SVG : positionné en haut avec un décalage */
 #svg_histoire {
-  max-width: 100vw; /* Limite la largeur maximale du SVG à celle de la fenêtre */
+  max-width: 95%; /* Limite la largeur maximale du SVG à celle de la fenêtre */
   margin-top: 110vh;
+  height : 100vw;
   width: 95%;
   overflow-x: hidden;
   left: 0%;
@@ -187,28 +189,7 @@ text {
   overflow-x: hidden;
 }
 
-/* Deuxième SVG : positionné à 2000px après le premier */
-#svg_chemin_t_shirt {
-  /*margin-top: 2000px;*/
-  max-width: 100vw; /* Limite la largeur maximale du SVG à celle de la fenêtre */
-  position: absolute;
-  overflow-x: hidden;
-  top: 1800px;
-  width: 95%;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-
-/* Style de l'image */
-#img_chemin {
-  position: relative;
-  width: 20vw;
-  height: auto;
-  transition: transform 0.1s ease-out; /* Pour un déplacement fluide */
-  overflow-x: hidden;
-}
-
-/* Barre noire en haut */
+ /* Barre noire en haut */
 .carree2 {
   position: fixed;
   opacity: 100%;
@@ -216,7 +197,7 @@ text {
   right: 0;
   width: 100%;
   height: 18vh;
-  background-color: #000000;
+  background-color: #121212;
   display: flex;
   cursor: pointer;
 }
@@ -728,7 +709,7 @@ text {
             right: 0px;
             width: 40px;
             height: 35px;
-            background-color: #000000;
+            background-color: #121212;
             display: flex;
             cursor: pointer;
             z-index: 1001;
@@ -741,7 +722,7 @@ text {
             right: 10px;
             width: 25px;
             height: 35px;
-            background-color: #000000;
+            background-color:#121212;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -773,7 +754,7 @@ text {
         .nav-buttons button {
             margin: 0 5px;
             padding: 5px 10px;
-            background-color: #000000;
+            background-color:#121212;
             border: none;
             border-radius: 5px;
             color: white;
@@ -813,6 +794,42 @@ text {
             transition-delay: 0.55s;
         }
 
+/* Disparition avec des délais inversés */
+.hide-menu .nav-buttons button:nth-child(1) {
+    transition-delay: 0.55s;
+}
+.hide-menu .nav-buttons button:nth-child(2) {
+    transition-delay: 0.45s;
+}
+.hide-menu .nav-buttons button:nth-child(3) {
+    transition-delay: 0.35s;
+}
+.hide-menu .nav-buttons button:nth-child(4) {
+    transition-delay: 0.25s;
+}
+.hide-menu .nav-buttons button:nth-child(5) {
+    transition-delay: 0.15s;
+}
+
+        /* Media query pour mobile */
+@media (max-width: 600px) {
+    .nav-buttons {
+        flex-direction: column; /* Les boutons seront empilés verticalement */
+        right: 20px; /* Ajuste la position à droite */
+        top: 50px; /* Ajuste la position en haut */
+    }
+
+    .nav-buttons button {
+        margin: 5px 0; /* Plus d'espace entre les boutons verticalement */
+        transform: translateY(100px); /* Initialement placé en dessous du bouton principal */
+    }
+
+    .show-menu .nav-buttons button {
+        transform: translateY(0); /* Déplacement vers la position finale verticale */
+    }
+
+}
+
         /* Section Instagram */
         .instagram-section {
             position: fixed;
@@ -833,7 +850,7 @@ text {
             left: 0;
             width: 100%;
             opacity: 1; /* Devenir visible */
-            background-color: #000000; /* rgba(0, 0, 0, 0); /* Fond transparent avec 50% d'opacité */
+            background-color:#121212; /* rgba(0, 0, 0, 0); /* Fond transparent avec 50% d'opacité */
             padding: 0px 20px;
             display: flex;
             justify-content: space-between;
@@ -1087,12 +1104,12 @@ text {
         }
 
         .photodrone {
-            position: absolute; /* Position fixe pour l'image */
+            position: fixed; /* Position fixe pour l'image */
             overflow-x: hidden;
-            top: 50px; /* Placer l'image à 180px du haut */
-            left: 49.3%; /* Centrer l'image horizontalement */
-            transform: translate(-50%, 0%); /* Centrer l'image horizontalement et verticalement */
-            width: 96%; /* Taille de l'image à 40% */
+            top: -20px; /* Placer l'image à 180px du haut */
+            right: 0vw; /*49.3%;  Centrer l'image horizontalement */
+            transform: translate(0%, 0%); /* Centrer l'image horizontalement et verticalement */
+            width: 105vw; /* Taille de l'image à 40% */
             opacity: 1; /* L'image est initialement invisible */
             transition: opacity 0.5s ease; /* Transition d'opacité */
             cursor: pointer;
@@ -1121,7 +1138,7 @@ text {
             position: fixed;
             top: 27vh;
             right: -4vw; /* Position initiale en dehors de l'écran à gauche */
-            width : 50vw; /* Taille de l'image à 40% */
+            width : 50vw; 
             opacity: 0; /* L'image est initialement invisible */
             transform: translateX(0) translateY(0); /*  transition: transform 1s ease-in-out;*/
         }
@@ -1129,8 +1146,8 @@ text {
         .T_shirt_Josy_1_ {
             position: fixed;
             top: 30vh;
-            right: 25vw; /* Position initiale en dehors de l'écran à gauche */
-            width : 50vw; /* Taille de l'image à 40% */
+            right: 25vw;
+            width : 50vw; 
             opacity: 0; /* L'image est initialement invisible */
             transform: translateX(-50) translateY(0); /*  transition: transform 1s ease-in-out;*/
         }
@@ -1138,8 +1155,8 @@ text {
         .T_shirt_Josy_2 {
             position: fixed;
             top: 30vh;
-            left: 40%; /* Position initiale en dehors de l'écran à gauche */
-            width: 55%; /* Taille de l'image à 40% */
+            left: 40%; 
+            width: 55%; 
             opacity: 0; /* L'image est initialement invisible */   
             transform: translateX(0) translateY(0) rotate(0deg); /* Ajout de la rotation */
        }
@@ -1202,7 +1219,7 @@ text {
         }
 
         .gallery2-nav {
-            background: #000;
+            background: #121212;
             color: #fff;
             border: none;
             font-size: 24px;
@@ -1355,11 +1372,11 @@ text {
                 
                 var gallery = document.querySelector('.gallery');
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josy_1');
+             /*   var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josy_1');
                 var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josy_2');
                 var T_shirt_Josy_1 = document.querySelector('.Pull_Josydole');
                 var T_shirt_Josy_1 = document.querySelector('.Casquette_1');
-                var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josyimaginaire');
+                var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josyimaginaire');*/
                             
                 
                 gsap.registerPlugin(ScrollTrigger);
@@ -1610,12 +1627,33 @@ text {
 
     //
    
+    let sreen_largeur = window.innerWidth;
+
     window.addEventListener('scroll', function() {
         let scrollPosition = window.scrollY;
-        let sreen_largeur = window.innerWidth;
-        document.getElementById('scroll-position').textContent = `Pos: ${scrollPosition}px - Larg: ${window.innerWidth}`;
+        document.getElementById('scroll-position').textContent = `Pos: ${scrollPosition}px - Larg: ${sreen_largeur}`;
     });
     
+
+    window.addEventListener('resize', () => {
+        // Recalcule la largeur et met à jour la position x
+    sreen_largeur = window.innerWidth;
+      //  document.getElementById('scroll-position').textContent = `Scroll position: ${sreen_largeur}px`;
+
+    let scrollPosition = window.scrollY;
+
+        document.getElementById('scroll-position').textContent = `Pos: ${scrollPosition}px - Larg: ${sreen_largeur}`;
+
+    // Recharger la page
+   // location.reload();
+
+    /*window.scrollTo({
+        top: scrollPosition,
+       // behavior: 'smooth' // défilement fluide
+    });*/
+
+//fin refresh 
+    });
 
             
         </script>
@@ -1742,19 +1780,6 @@ text {
                  <circle class="ball_ ball04" r="5"></circle>
             </svg>
 
-             <svg id="svg_chemin_t_shirt" xmlns="http://www.w3.org/2000/svg" viewBox="0 1000 600 1800" style="width: 100%; height: auto;">
-                <path id="theLine2" class="theLine2" 
-                d="M -5,0
-                Q 10 30 400 70 
-                T 270 180
-                Q -220 250 350 300
-                T 30 450"
-                    fill="none" stroke="white" stroke-width="0px" />
-            </svg>
-        
-            <img id="img_chemin" src="https://static.wixstatic.com/media/091b9b_e68f5e63f468436e8b418ed0e3388a70~mv2.png" alt="Image" />
-        
-
 
              <div class="box_histoire_1">
                 Il était une fois, dans un monde où la mode était sérieuse et les vêtements manquaient de fantaisie, trois amis décidèrent de changer la donne. Ils étaient animés par une idée simple mais puissante : faire rire les gens tout en les habillant avec style.
@@ -1821,7 +1846,7 @@ text {
       <div class="modal">
         <h2>Le Josy Jeu</h2>
         <p><span id="textContainer"></span></p>
-       <label for="motInput">Entrez un mot :</label>
+       <label for="motInput">Entrez un mot : JOSY</label>
        <input type="text" id="motInput">
        <br>
        <button onclick="compterMot()">Valider</button>
@@ -1900,7 +1925,7 @@ text {
     
    
      <!-- <img src="https://static.wixstatic.com/media/091b9b_2e7cbd6063454ce8ac19de96ca85d5ff~mv2.jpg" class="photodrone" alt="Image"> -->
-    <img src= '../Image/Josy - St barth 5.png' class="photodrone" alt="Image">
+    <img src= '../Image/Josy - St barth 5.jpeg' class="photodrone" alt="Image">
 
 
    <!-- Modal Container CARTE -->
@@ -1926,33 +1951,6 @@ text {
 
         <script>
 
-     // Sélectionner le chemin SVG et l'image
-     const path2 = document.getElementById("theLine");
-     const img_chemin = document.getElementById("img_chemin");
-
-        // Récupérer la longueur totale du chemin
-    const pathLength2 = path2.getTotalLength();
-
-        window.addEventListener('scroll', function() {
-            // Récupérer la position de scroll par rapport à la page
-            const scrollPosition = window.scrollY;
-            
-            // Calculer la progression du scroll (entre 0 et 1)
-            const scrollProgress = Math.min(scrollPosition / (document.body.scrollHeight - window.innerHeight), 1);
-
-            // Calculer la position le long du chemin (0 = début, 1 = fin)
-            const pointOnPath = pathLength2 * scrollProgress;
-
-            // Obtenir les coordonnées du point sur le chemin
-            const point = path2.getPointAtLength(pointOnPath);
-
-            // Déplacer l'image à la position de ce point
-            img_chemin.style.transform = `translate(${point.x}px, ${point.y}px)`;
-        });
-
-
-///chemin
- 
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -2149,10 +2147,10 @@ gsap.fromTo(".box_histoire_6", {
             
 			var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josy_1');
             var T_shirt_Josy_1_ = document.querySelector('.T_shirt_Josy_1_');
-			var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josy_2');
+			var T_shirt_Josy_2 = document.querySelector('.T_shirt_Josy_2');
 			/*var T_shirt_Josy_1 = document.querySelector('.Pull_Josydole');
 			var T_shirt_Josy_1 = document.querySelector('.Casquette_1');*/
-			var T_shirt_Josy_1 = document.querySelector('.T_shirt_Josyimaginaire');
+			var T_shirt_Josyimaginaire = document.querySelector('.T_shirt_Josyimaginaire');
 
             var photodrone = document.querySelector('.photodrone');
 						
@@ -2260,26 +2258,8 @@ gsap.fromTo(".box_histoire_6", {
 
 
 
-let sreen_largeur = window.innerWidth;
-/*
-window.addEventListener('resize', () => {
-        // Recalcule la largeur et met à jour la position x
-    sreen_largeur = window.innerWidth;
-      //  document.getElementById('scroll-position').textContent = `Scroll position: ${sreen_largeur}px`;
 
-    let scrollPosition = window.scrollY;
 
-    // Recharger la page
-    location.reload();
-
-    window.scrollTo({
-        top: scrollPosition,
-       // behavior: 'smooth' // défilement fluide
-    });
-
-//fin refresh 
-    });
-*/
 
     gsap.fromTo(".T_shirt_Josy_1", {
     x: 0,
@@ -2291,8 +2271,8 @@ window.addEventListener('resize', () => {
     opacity: 0, // Grossissement de 10% (taille à 110%)
     scrollTrigger: {
         trigger: document.body, // Déclencher par rapport au body
-        start: "4499px",  // Démarre après la première animation
-        end: "4500px",    // Garde la position pendant 200px
+        start: "4449px",  // Démarre après la première animation
+        end: "4450px",    // Garde la position pendant 200px
         scrub: 0,  
         markers: false          // Pour voir les repères de démarrage et de fin (pour le debug)
     }
@@ -2302,7 +2282,7 @@ window.addEventListener('resize', () => {
 
 
 //FIN LEVÉE : 
-gsap.fromTo(".T_shirt_Josy_1_", {
+animation = gsap.fromTo(".T_shirt_Josy_1_", {
     x: 0,
     y: 0,
     scale: 1.2 // Taille initiale à 100%
@@ -2320,7 +2300,7 @@ gsap.fromTo(".T_shirt_Josy_1_", {
 });
 
 gsap.fromTo(".T_shirt_Josy_1_", {
-    x: () => sreen_largeur * 0.29,
+    x: sreen_largeur * 0.29,
     y: -22,
     scale: 1 // Taille initiale à 100%
 }, {
@@ -2335,6 +2315,37 @@ gsap.fromTo(".T_shirt_Josy_1_", {
         markers: false          // Pour voir les repères de démarrage et de fin (pour le debug)
     }
 });
+
+
+
+window.addEventListener('resize', () => {
+        // Recalcule la largeur et met à jour la position x
+    sreen_largeur = window.innerWidth;
+
+    ScrollTrigger.refresh();
+      //  document.getElementById('scroll-position').textContent = `Scroll position: ${sreen_largeur}px`;
+
+ gsap.fromTo(".T_shirt_Josy_1_", {
+    x: sreen_largeur * 0.29,
+    y: -22,
+    scale: 1 // Taille initiale à 100%
+}, {
+    x: 0,
+    y: 0, // Ajout de l'animation sur l'axe Y
+    scale: 1.2, // Grossissement de 10% (taille à 110%)
+    scrollTrigger: {
+        trigger: document.body, // Déclencher par rapport au body
+        start: "4500px",  // Démarre après la première animation
+        end: "4900px",    // Garde la position pendant 200px
+        scrub: 0,  
+        markers: false          // Pour voir les repères de démarrage et de fin (pour le debug)
+    }
+});
+
+ScrollTrigger.refresh();
+//fin refresh 
+    });
+
 
 gsap.fromTo(".T_shirt_Josyimaginaire", {
     x: 0,
@@ -2392,7 +2403,7 @@ gsap.fromTo(".T_shirt_Josyimaginaire", {
 
 gsap.fromTo(".T_shirt_Josyimaginaire", {
     x: 200,
-    y: -30,
+    y: -42,
     scale: 0.7,
     transform: "translateX(0) translateY(0) rotate(0deg)" // Ajout de la rotation initiale
 }, {
@@ -2426,7 +2437,7 @@ gsap.fromTo(".T_shirt_Josy_2", {
 
 gsap.fromTo(".T_shirt_Josy_2", {
     x: -200,
-    y: -30,
+    y: -42,
     scale: 0.7,
     transform: "translateX(0) translateY(0) rotate(0deg)" // Ajout de la rotation initiale
 }, {
@@ -2492,7 +2503,7 @@ gsap.fromTo(".photodrone", {
         y : 0,
         opacity : 1,
     }, {
-        y : 0,
+        y : -120,
         opacity : 0,
         scrollTrigger: {
             trigger: document.body, // Déclencher par rapport au body
@@ -2698,8 +2709,16 @@ function updatePointsVisibility(scrollTop) {
 
         // JavaScript pour basculer le menu
         document.getElementById('menuToggle').addEventListener('click', function() {
-            document.body.classList.toggle('show-menu');
-        });
+    if (document.body.classList.contains('show-menu')) {
+        // Si le menu est visible, on enlève la classe show-menu et on ajoute hide-menu
+        document.body.classList.remove('show-menu');
+        document.body.classList.add('hide-menu');
+    } else {
+        // Si le menu est caché, on enlève hide-menu et on ajoute show-menu
+        document.body.classList.remove('hide-menu');
+        document.body.classList.add('show-menu');
+    }
+});
 
 
         // Sélectionne tous les boutons avec la classe 'button'
@@ -2748,7 +2767,7 @@ function updatePointsVisibility(scrollTop) {
   
 function startTyping() {
         // Texte à afficher progressivement
-        var text = "Voici un texte qui s'affiche au fur et à mesure.";
+        var text = "Soyez dans le top 5 des JOSYmots et gagner un bon de réduction";
 
         // Sélection du conteneur où le texte sera affiché
         var textContainer = document.getElementById('textContainer');
@@ -2938,50 +2957,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-  /*  // Liste des données complètes
-    const allData = [
-        'diot', 'lrande', 'lluminé', 'guane', 'vrogne',
-        'larant', 'dole', 'nouï', 'conique', 'gloo',
-        'slande', 'déal'
-    ];
-
-    // Fonction pour sélectionner aléatoirement des éléments
-    function pickRandomElements(arr, count) {
-        // Vérifier si le nombre demandé est supérieur au nombre d'éléments dans le tableau
-        if (count > arr.length) {
-            console.error('Le nombre demandé est supérieur au nombre d\'éléments dans le tableau.');
-            return;
-        }
-
-        // Copier le tableau original pour éviter de le modifier directement
-        let shuffled = arr.slice();
-
-        // Mélanger le tableau de manière aléatoire
-        shuffled.sort(() => 0.5 - Math.random());
-
-        // Retourner les premiers 'count' éléments du tableau mélangé
-        return shuffled.slice(0, count);
-    }
-
-    // Fonction pour actualiser les éléments toutes les 20 secondes
-    function updateRandomElements() {
-        // Sélectionner aléatoirement 9 éléments parmi 'allData'
-        const selectedData = pickRandomElements(allData, 10);
-
-        // Sélectionner l'élément parent où les données seront ajoutées
-        const container = document.getElementById('randomElements');
-        container.innerHTML = ''; // Effacer le contenu précédent
-
-        // Ajouter les éléments sélectionnés à la classe 'slider2'
-        selectedData.forEach(item => {
-            const p = document.createElement('p');
-            p.textContent = item;
-            container.appendChild(p);
-        });
-    }
-        
-*/
-
 
 let mots = [];
 
@@ -3088,7 +3063,7 @@ chargerDonnees()
 
     /// TEST MOT JOSY
 
-function compterMot() {
+function compterMot1() {
 
   //  document.getElementById('Valider').addEventListener('click', function() {
         const motTrouve = document.getElementById('motInput').value;
@@ -3133,31 +3108,31 @@ function compterMot() {
    
 
     // Fonction pour compter le mot saisi
-function compterMot1() {
+function compterMot() {
 
      //   document.getElementById("textContainer").textContent = "3"
-        const motSaisi = document.getElementById("motInput").value.toLowerCase().trim();
+        const motSaisi = document.getElementById("motInput").value.trim(); //.value.toLowerCase().trim();
 
         // Recherche du mot dans la liste
     //    document.getElementById("textContainer").textContent = "4"
-        const motTrouve = mots.find(item => ("josy" + item.mot) === ("josy" + motSaisi));
+        const motTrouve = mots.find(item => (item.mot) === (motSaisi));
      //   document.getElementById("textContainer").textContent = "5"
 
         if (motTrouve) {
             motTrouve.nombre++; // Incrémentation du compteur
-            document.getElementById("resultat").textContent = `VVous êtes la ${motTrouve.nombre}ème personne à penser à "${motSaisi}".`;
+            document.getElementById("resultat").textContent = `Vous êtes la ${motTrouve.nombre}ème personne à penser à  JOSY${motSaisi}.`;
 
             // Mettre à jour le fichier JSON avec la nouvelle valeur
-            mettreAJourJSON(mots);
+            mettreAJourJSON(motSaisi, motTrouve.nombre);
 
         } else {
-            document.getElementById("resultat").textContent = `Le mot "${motSaisi}" n'est pas dans la liste.`;
+            document.getElementById("resultat").textContent = `Le mot JOSY${motSaisi} n'est pas dans la liste.`;
         }
 
         // Effacer le champ de saisie après comptage
         document.getElementById("motInput").value = "";
     }
-
+/*
      // Fonction pour mettre à jour le fichier JSON
 function mettreAJourJSON(updatedData) {
             return fetch('/update-json', {
@@ -3173,8 +3148,56 @@ function mettreAJourJSON(updatedData) {
             })
             .catch(error => {
                 console.error('Erreur lors de la mise à jour du fichier JSON:', error);
+                document.getElementById("resultat").textContent = 'error sauvegarde JSON : ', error;
             });
         }
+*/
+
+
+// Fonction pour charger les données JSON existantes
+function chargerJSON() {
+    return fetch('motsJOSY.json')
+    .then(response => response.json())
+        .then(data => {
+            console.log('Données chargées depuis motsJOSY.json:', data);
+            mots = data;
+            return mots; // Retourne les données pour les utiliser plus tard
+        })
+        .catch(error => {
+            console.error('Erreur de chargement des données:', error);
+            throw error; // Propage l'erreur pour la gérer en aval si nécessaire
+        });
+}
+        // Fonction pour mettre à jour le fichier JSON
+function mettreAJourJSON(updated_mot,updated_nb ) {
+chargerJSON().then(data => {
+        // Cherche la ligne où "mot" est "diot"
+        const ligne = data.find(item => item.mot === updated_mot);
+        if (ligne) {
+            // Met à jour la colonne "nombre" à 2
+            ligne.nombre = updated_nb;
+
+            console.log("Le mot ", updated_mot, " est valide.");
+            // Envoie les données mises à jour au serveur pour les sauvegarder
+            return fetch('/update-json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) // Envoie les données JSON mises à jour
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la mise à jour du fichier JSON:', error);
+            });
+        } else {
+            console.log("Le mot ", updated_mot, " n'a pas été trouvé dans le fichier JSON.");
+        }
+    });
+}
 
 
 // Fonction pour sauvegarder les données mises à jour localement
@@ -3182,7 +3205,44 @@ function sauvegarderDonneesLocalement() {
     localStorage.setItem('motsJOSY', JSON.stringify(mots));
     console.log('Données mises à jour localement.');
 }
-        </script>
+
+const express = require('express');
+const fs = require('fs');
+const app = express();
+
+app.use(express.json());
+
+// Route pour charger les données JSON
+app.get('/get-json', (req, res) => {
+    fs.readFile('../motsJOSY.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Erreur lors du chargement du fichier JSON');
+        }
+        res.json(JSON.parse(data)); // Envoie les données JSON au frontend
+    });
+});
+
+// Route pour mettre à jour le fichier JSON
+app.post('/update-json', (req, res) => {
+    const updatedData = req.body;
+
+    fs.writeFile('../motsJOSY.json', JSON.stringify(updatedData, null, 2), 'utf8', (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Erreur lors de la sauvegarde du fichier JSON');
+        }
+        res.json({ message: 'Fichier JSON mis à jour avec succès' });
+    });
+});
+
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Serveur en cours d'exécution sur le port ${port}`);
+});
+
+
+</script>
 
     </div>
 
